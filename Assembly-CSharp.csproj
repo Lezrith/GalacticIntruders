@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{FAE4F2E2-F6D6-D1F1-EDAD-F2ABB64514F2}</ProjectGuid>
+	<ProjectGuid>{476AA688-458E-3261-9D8D-853ED5859F08}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>F:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>F:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -53,6 +53,7 @@
      <Compile Include="Assets\Code\ControllerHandling.cs" />
      <Compile Include="Assets\Code\DestroyAsteroid.cs" />
      <Compile Include="Assets\Code\DestroyEnemy.cs" />
+     <Compile Include="Assets\Code\DisplayScore.cs" />
      <Compile Include="Assets\Code\DontDestroy.cs" />
      <Compile Include="Assets\Code\EnemyShipMovingLeft.cs" />
      <Compile Include="Assets\Code\GoToDoboa.cs" />
@@ -71,7 +72,7 @@
      <Compile Include="Assets\Code\SpawnAsteroid.cs" />
      <Compile Include="Assets\Code\SpawnEnemies.cs" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
+ <HintPath>F:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

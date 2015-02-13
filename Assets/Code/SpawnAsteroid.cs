@@ -11,11 +11,9 @@ public class SpawnAsteroid : MonoBehaviour
     public bool asteroidBelt;
     private SpriteRenderer danger;
     public float FlashTime;
-    private bool flashing;
     // Use this for initialization
     void Start()
     {
-        flashing = true;
         InvokeRepeating("Spawn", spawnDelay, spawnTime);
         timeOffAsteroidBelt= Time.time;
         danger = GameObject.Find("DangerAsteroidBelt").GetComponent<SpriteRenderer>();      
@@ -36,14 +34,12 @@ public class SpawnAsteroid : MonoBehaviour
         if (!asteroidBelt)
         if (Time.time - timeIfAsteroidBelt > 5.0f)
         {
-            //flashing = true;
             asteroidBelt = true;
             timeOffAsteroidBelt = Time.time;
         }
         if(asteroidBelt)
         {
             Flash();
-            //flashing = false;
             if (Time.time - timeOffAsteroidBelt > 5.0f)
             {
                 asteroidBelt = false;
