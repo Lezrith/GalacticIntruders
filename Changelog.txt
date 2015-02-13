@@ -1,0 +1,17 @@
+-----------------
+V0.53c - £azarz
+***Zmiany***
+-dodana pauza na spacje (skrypt "Pause")
+-zmienione nazwy skryptów ("DespawnAsteroid"->"DestroyAsteroid";"DestroyOnContact"->"DestroyEnemy")
+-usuniêty bug z get_time (przypisanie Time.time do timera w funkcji Start a nie przy deklaracji)
+V0.54 - Sefir
+***Zmiany***
+-w Logu widzimy piêæ najlepszych wyników
+***To do***
+-napisy by z menu rozpocz¹æ grê, lub przejœæ do najlepszych wyników, a tak¿e by z menu Best Scores zresetowaæ wyniki
+-odbugowanie TrashMana (jak sie przegra i zrobi now¹ grê, a by³o mniej pozosta³ych miejsc w TrashManie w przegranej grze
+ni¿ iloœæ statków pojawiaj¹cych siê w nowej, to u¿ywa Instantiate (b³¹d "no recycle bin set up"), mo¿liwe fixy: reset
+TrashMana jak jest coœ takiego wbudowane, a jak nie to mo¿na przejœæ po tablicy enemiesów przy przegranej 
+i zdespawnowaæ TrashManem
+-znikanie Shota przy trafieniu w asteroidê (chyba ¿e to zamierzone) - chyba te¿ trzeba bêdzie robiæ to z t¹ eksplozj¹
+-TrashMan dla Shotów
