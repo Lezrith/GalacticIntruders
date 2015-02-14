@@ -50,6 +50,7 @@
      <Compile Include="Assets\Addons\TrashManRecycleBin.cs" />
      <Compile Include="Assets\Code\AsteroidMovementRotation.cs" />
      <Compile Include="Assets\Code\BackgroundMove.cs" />
+     <Compile Include="Assets\Code\ClearStatistics.cs" />
      <Compile Include="Assets\Code\ControllerHandling.cs" />
      <Compile Include="Assets\Code\DestroyAsteroid.cs" />
      <Compile Include="Assets\Code\DestroyEnemy.cs" />
@@ -61,7 +62,7 @@
      <Compile Include="Assets\Code\GoToMenu.cs" />
      <Compile Include="Assets\Code\LoadDangerSprite.cs" />
      <Compile Include="Assets\Code\LoadPausedSprite.cs" />
-     <Compile Include="Assets\Code\MenuToGameOnClick.cs" />
+     <Compile Include="Assets\Code\MenuOnClick.cs" />
      <Compile Include="Assets\Code\Pause.cs" />
      <Compile Include="Assets\Code\Quit.cs" />
      <Compile Include="Assets\Code\ScoreControl.cs" />
