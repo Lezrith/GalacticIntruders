@@ -15,7 +15,7 @@ public class ScoreControl : MonoBehaviour {
 
 	void Awake () 
 	{
-		ScoreGUIText = GameObject.FindWithTag("Wynik").guiText;
+		ScoreGUIText = GameObject.FindWithTag("Wynik").GetComponent<GUIText>();
 		score = 0;
 		UpdateScore ();
 	}

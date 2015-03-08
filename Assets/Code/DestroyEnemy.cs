@@ -47,7 +47,7 @@ public class DestroyEnemy : MonoBehaviour {
 		if (other.tag == "EnemyShip") 
 		{
 		AudioSource.PlayClipAtPoint(explosionEnemy,other.transform.position,0.2f);
-		other.gameObject.audio.Play();
+		other.gameObject.GetComponent<AudioSource>().Play();
 		docObject=other.gameObject;
 		doc = docObject.GetComponent <DestroyEnemy>();
 		scoreControl.AddScore (doc.scoreValue);

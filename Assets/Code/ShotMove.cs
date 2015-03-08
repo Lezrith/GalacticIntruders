@@ -7,7 +7,7 @@ public class ShotMove : MonoBehaviour {
     private float Screenx=Screen.width;
 	// Use this for initialization
 	void Start () {
-		rigidbody2D.AddForce (new Vector2 (Speed, 0));
+		GetComponent<Rigidbody2D>().AddForce (new Vector2 (Speed, 0));
 	
 	}
 	

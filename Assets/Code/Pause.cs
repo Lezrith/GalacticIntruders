@@ -26,7 +26,7 @@ public class Pause : MonoBehaviour
             Time.timeScale = 0.0f;
             shooting.enabled = false;
             moving.enabled = false;
-            paused.renderer.enabled = true;
+            paused.GetComponent<Renderer>().enabled = true;
         }
 
         if (!pausedGame)
@@ -34,7 +34,7 @@ public class Pause : MonoBehaviour
             Time.timeScale = 1.0f;
             shooting.enabled = true;
             moving.enabled = true;
-            paused.renderer.enabled = false;
+            paused.GetComponent<Renderer>().enabled = false;
         }
     }
 

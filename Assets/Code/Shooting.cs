@@ -23,7 +23,7 @@ public class Shooting : MonoBehaviour {
 			nextFire = Time.time + fireRate;
 			Instantiate(Shot, ShotSpawn.position, ShotSpawn.rotation);
 			Instantiate(Shot, ShotSpawn2.position, ShotSpawn2.rotation);
-			this.audio.Play ();
+			this.GetComponent<AudioSource>().Play ();
 					}
 	}
 }

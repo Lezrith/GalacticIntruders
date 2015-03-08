@@ -7,7 +7,7 @@ public class GoToDoboa : MonoBehaviour
 
     void OnMouseDown(){
 		wyn = GameObject.FindWithTag("Wynik");
-		wyn.guiText.enabled = true;
+		wyn.GetComponent<GUIText>().enabled = true;
         Application.LoadLevel("Doboa");
         
     }

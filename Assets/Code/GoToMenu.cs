@@ -6,7 +6,7 @@ public class GoToMenu : MonoBehaviour {
     private GameObject wyn;
 	void OnMouseDown() {
         wyn = GameObject.FindWithTag("Wynik");
-		wyn.guiText.enabled = false;
+		wyn.GetComponent<GUIText>().enabled = false;
         Application.LoadLevel("Menu");
 	
 	}

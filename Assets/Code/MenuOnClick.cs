@@ -11,18 +11,18 @@ public class MenuOnClick : MonoBehaviour
     }
     public void GoToDoboa()
     {
-        wyn.guiText.enabled = true;
+        wyn.GetComponent<GUIText>().enabled = true;
         Application.LoadLevel("Doboa");
     }
 
     public void GoToHighScores()
     {
-        wyn.guiText.enabled = false;
+        wyn.GetComponent<GUIText>().enabled = false;
         Application.LoadLevel("HighScores");
     }
     public void GoToMenu()
     {
-        wyn.guiText.enabled = false;
+        wyn.GetComponent<GUIText>().enabled = false;
         Application.LoadLevel("Menu");
     }
     public void Exit()
