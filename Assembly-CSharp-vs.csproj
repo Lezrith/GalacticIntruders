@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>F:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>F:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -51,7 +51,9 @@
      <Compile Include="Assets\Code\AsteroidMovementRotation.cs" />
      <Compile Include="Assets\Code\BackgroundMove.cs" />
      <Compile Include="Assets\Code\ClearStatistics.cs" />
-     <Compile Include="Assets\Code\ControllerHandling.cs" />
+     <Compile Include="Assets\Code\ControllerHandlingGameOver.cs" />
+     <Compile Include="Assets\Code\ControllerHandlingHighScores.cs" />
+     <Compile Include="Assets\Code\ControllerHandlingMenu.cs" />
      <Compile Include="Assets\Code\DestroyAsteroid.cs" />
      <Compile Include="Assets\Code\DestroyEnemy.cs" />
      <Compile Include="Assets\Code\DisplayScore.cs" />
@@ -73,7 +75,7 @@
      <Compile Include="Assets\Code\SpawnAsteroid.cs" />
      <Compile Include="Assets\Code\SpawnEnemies.cs" />
  <Reference Include="UnityEngine.UI">
- <HintPath>F:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
