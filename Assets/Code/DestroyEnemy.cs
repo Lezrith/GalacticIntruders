@@ -2,18 +2,19 @@
 using System.Collections;
 
 public class DestroyEnemy : MonoBehaviour {
-    public float ExplosionRadius;
-	private ScoreControl scoreControl;
-	private DestroyEnemy doc;
-	public int scoreValue;
-	private bool shieldState;
+
 	private GameObject scoreControlObject;
-	private GameObject docObject;
-	private GameObject playerShipObject;
-	private Shield shieldScript;
-	public AudioClip explosionEnemy;
-	private GoToGameOver gameOver;
 	private GameObject gameOverObject;
+	public AudioClip explosionEnemy;
+
+	private ScoreControl scoreControl;
+	private GoToGameOver gameOver;
+
+	private bool shieldState;
+	private int enemyScoreValue;
+
+	public float ExplosionRadius;
+
 
 
 	void Start()
@@ -27,59 +28,28 @@ public class DestroyEnemy : MonoBehaviour {
 		{
 			Debug.Log("Cannot find ScoreControl script");
 		}
-
-		playerShipObject = GameObject.FindWithTag ("PlayerShip");
-		if ( playerShipObject != null) 
-		{
-			shieldScript = playerShipObject.GetComponent<Shield>();
-		} 
-		else 
-		{
-			Debug.Log("Cannot find Shield script");
-		}
-
 	}
 	void OnTriggerEnter2D(Collider2D other) 
-	{
-		GameObject scoreControlObject = GameObject.FindWithTag("ScoreControl");
-		scoreControl = scoreControlObject.GetComponent<ScoreControl>();
-		shieldState = shieldScript.shieldState;			
+	{			
 		if (other.tag == "EnemyShip") 
 		{
-		AudioSource.PlayClipAtPoint(explosionEnemy,other.transform.position,0.2f);
-		other.gameObject.GetComponent<AudioSource>().Play();
-		docObject=other.gameObject;
-		doc = docObject.GetComponent <DestroyEnemy>();
-		scoreControl.AddScore (doc.scoreValue);
 		
-		TrashMan.despawn (other.gameObject);
-		Collider2D[] colliders = Physics2D.OverlapCircleAll(other.gameObject.transform.position, ExplosionRadius);
-			foreach(var col in colliders)
-			{
-				if (col.tag == "Shot")
-				{
-					TrashMan.despawn(col.gameObject);
-				}
-			}
-			}
-         if ( tag == "EnemyShip" && other.tag == "PlayerShip")
-        {
-			if (!shieldState)
-			{
-			Destroy(other);
-			//Application.LoadLevel("GameOver");
-			GameObject gameOverObject = GameObject.FindWithTag("ScoreControl");
-			GoToGameOver gameOver =  gameOverObject.GetComponent<GoToGameOver>();
-			gameOver.GameOver();
-			}
-			else if (shieldState)
-			{
-				docObject=gameObject;
-				doc = docObject.GetComponent <DestroyEnemy>();
-				scoreControl.AddScore (doc.scoreValue);
-				TrashMan.despawn (this.gameObject);
-			}
+			AudioSource.PlayClipAtPoint(explosionEnemy,other.transform.position,0.2f);
 
+			enemyScoreValue=other.gameObject.GetComponent<DestroyPlayer>().scoreValue;
+			scoreControl.AddScore (enemyScoreValue);
+			TrashMan.despawn (other.gameObject);
+
+			Collider2D[] colliders = Physics2D.OverlapCircleAll(other.gameObject.transform.position, ExplosionRadius);
+
+				foreach(var col in colliders)
+				{
+					if (col.tag == "Shot")
+					{
+						TrashMan.despawn(col.gameObject);
+					}
+				}
+		}
 			/*GameObject scoreSaveObject = GameObject.FindWithTag ("ScoreControl");
 			ScoreControl scoreSave = scoreSaveObject.GetComponent<ScoreControl> ();
 			scoreToTake= scoreSave.score;
@@ -105,6 +75,4 @@ public class DestroyEnemy : MonoBehaviour {
          }
          
 		}
-	
-	}
 
