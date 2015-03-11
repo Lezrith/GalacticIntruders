@@ -8,17 +8,18 @@ public class Pause : MonoBehaviour
     private Shooting shooting;
     private ShipMovement moving;
     private GameObject paused;
+    private Renderer PausedRenderer;
 
     void Start()
     {
         shooting = GameObject.FindWithTag("PlayerShip").GetComponent<Shooting>();
         moving = GameObject.FindWithTag("PlayerShip").GetComponent<ShipMovement>();
-        paused = GameObject.Find("Paused");
+        PausedRenderer = GameObject.Find("Paused").GetComponent<Renderer>();
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Pause"))
             pausedGame = !pausedGame;
 
         if (pausedGame)
@@ -26,7 +27,7 @@ public class Pause : MonoBehaviour
             Time.timeScale = 0.0f;
             shooting.enabled = false;
             moving.enabled = false;
-            paused.GetComponent<Renderer>().enabled = true;
+            PausedRenderer.enabled = true;
         }
 
         if (!pausedGame)
@@ -34,7 +35,7 @@ public class Pause : MonoBehaviour
             Time.timeScale = 1.0f;
             shooting.enabled = true;
             moving.enabled = true;
-            paused.GetComponent<Renderer>().enabled = false;
+            PausedRenderer.enabled = false;
         }
     }
 
