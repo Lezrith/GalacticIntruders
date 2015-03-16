@@ -4,18 +4,13 @@ using System.Collections;
 public class LoadDangerSprite : MonoBehaviour
 {
 
-    private SpriteRenderer sprite_renderer;
-    // Use this for initialization
+    private SpriteRenderer spriteRenderer;
+
     void Start()
     {
-        sprite_renderer = this.GetComponent<SpriteRenderer>();
-        sprite_renderer.sprite = Resources.Load<UnityEngine.Sprite>("Sprites/DangerAsteroidBelt");
-        sprite_renderer.enabled = false;
+        spriteRenderer = this.GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = Resources.Load<UnityEngine.Sprite>("Sprites/DangerAsteroidBelt");
+        spriteRenderer.enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

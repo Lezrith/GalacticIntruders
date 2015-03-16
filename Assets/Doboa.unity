@@ -189,6 +189,16 @@ MonoBehaviour:
     cullInterval: 10
     automaticallyRecycleParticleSystems: 0
     persistBetweenScenes: 1
+  - prefab: {fileID: 100002, guid: a95fd1fc476dab94eaf8dd7af7629dd4, type: 2}
+    instancesToPreallocate: 30
+    instancesToAllocateIfEmpty: 1
+    imposeHardLimit: 0
+    hardLimit: 5
+    cullExcessPrefabs: 0
+    instancesToMaintainInPool: 5
+    cullInterval: 10
+    automaticallyRecycleParticleSystems: 0
+    persistBetweenScenes: 1
   cullExcessObjectsInterval: 10
   persistBetweenScenes: 1
   transform: {fileID: 0}
@@ -1137,6 +1147,7 @@ MonoBehaviour:
   Shot: {fileID: 100002, guid: a95fd1fc476dab94eaf8dd7af7629dd4, type: 2}
   ShotSpawn: {fileID: 13586383}
   ShotSpawn2: {fileID: 675624288}
+  fireSound: {fileID: 8300000, guid: 71b4cae8ec1a8074ebaca81413812898, type: 3}
   fireRate: .5
 --- !u!114 &2119289434
 MonoBehaviour:
@@ -1268,4 +1279,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b19fa5fb990d94c87c5554453ccb3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDeathSound: {fileID: 8300000, guid: c83c93f07b8c8da45afab0f8117fbe30, type: 3}
   shieldState: 0

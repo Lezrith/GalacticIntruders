@@ -4,20 +4,20 @@ using System.Collections;
 public class DestroyPlayer : MonoBehaviour {
 
 	private GameObject playerShipObject;
-
 	private Shield shieldScript;
 	private ScoreControl scoreControl;
+	private GoToGameOver gameOver;
 
 	private bool shieldState;
 	private int enemyScoreValue;
-
-	public int scoreValue;
-	public AudioClip explosionPlayer;
-	public AudioClip explosionEnemy;
 	
-	void Start()
+	public AudioClip despawnSound;
+	public int scoreValue;
+	public float explosionRadius;
+	
+	void OnEnable()
 	{
-		playerShipObject = GameObject.FindWithTag ("PlayerShip");
+		/*playerShipObject = GameObject.FindWithTag ("PlayerShip");
 		if ( playerShipObject != null) 
 		{
 			shieldScript = playerShipObject.GetComponent<Shield>();
@@ -36,32 +36,39 @@ public class DestroyPlayer : MonoBehaviour {
 		{
 			Debug.Log("Cannot find ScoreControl script");
 		}
-		
+		*/
+		shieldScript = HGetComponentGeneric.ByTag<Shield> ("PlayerShip");
+		scoreControl = HGetComponentGeneric.ByTag<ScoreControl> ("ScoreControl");
+		gameOver = HGetComponentGeneric.ByTag<GoToGameOver>("ScoreControl");
 	}
 
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (tag == "EnemyShip" && other.tag == "PlayerShip") 
+		if (other.tag == "PlayerShip") 
 		{
-			shieldScript=other.gameObject.GetComponent<Shield>();
 			shieldState=shieldScript.shieldState;
 
 			if (!shieldState) 
 			{
-				AudioSource.PlayClipAtPoint(explosionPlayer,other.transform.position,0.2f);
+				AudioSource.PlayClipAtPoint(shieldScript.playerDeathSound, other.gameObject.transform.position, 0.2f);
 				Destroy (other);
 				//Application.LoadLevel("GameOver");
-				GameObject gameOverObject = GameObject.FindWithTag ("ScoreControl");
-				GoToGameOver gameOver = gameOverObject.GetComponent<GoToGameOver> ();
+				//GameObject gameOverObject = GameObject.FindWithTag ("ScoreControl");
+				//GoToGameOver gameOver = gameOverObject.GetComponent<GoToGameOver> ();
 				gameOver.GameOver ();
 			} 
 
 			else if (shieldState) 
 			{
-				AudioSource.PlayClipAtPoint(explosionEnemy,other.transform.position,0.2f);
+				if(despawnSound!=null)
+				{
+				AudioSource.PlayClipAtPoint(despawnSound, this.gameObject.transform.position, 0.2f);
+				}
+
 				enemyScoreValue=this.gameObject.GetComponent<DestroyPlayer>().scoreValue;
 				scoreControl.AddScore (enemyScoreValue);
+
 				TrashMan.despawn (this.gameObject);
 			}
 		}

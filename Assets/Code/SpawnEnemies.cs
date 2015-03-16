@@ -7,7 +7,8 @@ public class SpawnEnemies : MonoBehaviour {
     public float spawnDelay = 0.6f;
 	private float timer;
 	
-	void Start () {
+	void Start () 
+	{
         InvokeRepeating("Spawn", spawnDelay, spawnTime);
 		timer = Time.time;
 	}
@@ -23,9 +24,4 @@ public class SpawnEnemies : MonoBehaviour {
            Start();
        }
     }
-        
-    
-		void Update () {
-	
-	}
 }

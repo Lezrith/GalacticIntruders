@@ -3,20 +3,19 @@ using System.Collections;
 
 public class ControllerHandlingHighScores : MonoBehaviour {
 
-	ClearStatistics baton;
+	ClearStatistics clearStatisticsButton;
 
-	// Use this for initialization
-	void Start () {
-		baton = (ClearStatistics)this.GetComponent(typeof(ClearStatistics));
+	void Start ()
+	{
+		clearStatisticsButton = (ClearStatistics)this.GetComponent (typeof(ClearStatistics));
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+	void Update () 
+	{
 		if (Input.GetKeyDown ("joystick button 1"))
 			Application.LoadLevel ("Menu");
-		if (Input.GetKeyDown ("joystick button 2")) {
-			baton.Clear();
-		}
+		if (Input.GetKeyDown ("joystick button 2"))
+			clearStatisticsButton.Clear();
 
 	}
 }

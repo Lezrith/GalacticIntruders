@@ -3,15 +3,17 @@ using System.Collections;
 
 public class Shield : MonoBehaviour
 {
+	public AudioClip playerDeathSound;
+	public bool shieldState = false;
 
-    private float shieldOnTime = 0.0f;
-    public bool shieldState = false;
+	private Renderer ShieldRenderer;
+	private float shieldOnTime = 0.0f;
     private int shieldCount = 1;
-    private Renderer ShieldRenderer;
 
     void Start()
     {
-        ShieldRenderer = GameObject.Find("Ship/ShieldSprite").GetComponent<Renderer>();
+        //ShieldRenderer = GameObject.Find("Ship/ShieldSprite").GetComponent<Renderer>();
+		ShieldRenderer = HGetComponentGeneric.ByName<Renderer>("Ship/ShieldSprite");
     }
 
     void Update()

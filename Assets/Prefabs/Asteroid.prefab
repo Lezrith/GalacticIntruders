@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21276838}
   - 58: {fileID: 5876838}
   - 114: {fileID: 11476838}
-  - 114: {fileID: 11446638}
+  - 114: {fileID: 11488050}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Asteroid
@@ -44,17 +44,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: .25
---- !u!114 &11446638
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 176838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0762eacd3b029fc4a8d16f4f50340466, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11476838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67,6 +56,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiltAngle: 135
+--- !u!114 &11488050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3270b7f36aff6a14d8b8ca4c33d5c929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnSound: {fileID: 0}
+  scoreValue: 50
+  explosionRadius: .280000001
 --- !u!212 &21276838
 SpriteRenderer:
   m_ObjectHideFlags: 1

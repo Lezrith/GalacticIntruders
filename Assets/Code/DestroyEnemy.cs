@@ -3,23 +3,21 @@ using System.Collections;
 
 public class DestroyEnemy : MonoBehaviour {
 
-	private GameObject scoreControlObject;
-	private GameObject gameOverObject;
-	public AudioClip explosionEnemy;
-
+	private DestroyPlayer enemyScript;
 	private ScoreControl scoreControl;
 	private GoToGameOver gameOver;
+	private AudioClip enemyDespawnSound;
 
 	private bool shieldState;
 	private int enemyScoreValue;
-
-	public float ExplosionRadius;
-
+	private float enemyExplosionRadius;
 
 
-	void Start()
+
+
+	void OnEnable()
 	{
-		GameObject scoreControlObject = GameObject.FindWithTag ("ScoreControl");
+		/*GameObject scoreControlObject = GameObject.FindWithTag ("ScoreControl");
 		if (scoreControlObject != null) 
 		{
 			scoreControl = scoreControlObject.GetComponent <ScoreControl> ();
@@ -27,20 +25,27 @@ public class DestroyEnemy : MonoBehaviour {
 		else 
 		{
 			Debug.Log("Cannot find ScoreControl script");
-		}
+		}*/
+		scoreControl = HGetComponentGeneric.ByTag<ScoreControl> ("ScoreControl");
 	}
 	void OnTriggerEnter2D(Collider2D other) 
 	{			
-		if (other.tag == "EnemyShip") 
+		if (other.tag == "EnemyShip"||other.tag == "Asteroid") 
 		{
-		
-			AudioSource.PlayClipAtPoint(explosionEnemy,other.transform.position,0.2f);
+			enemyScript=other.gameObject.GetComponent<DestroyPlayer>();
+			enemyScoreValue=enemyScript.scoreValue;
+			enemyDespawnSound=enemyScript.despawnSound;
+			enemyExplosionRadius=enemyScript.explosionRadius;
 
-			enemyScoreValue=other.gameObject.GetComponent<DestroyPlayer>().scoreValue;
-			scoreControl.AddScore (enemyScoreValue);
+			if(enemyDespawnSound!=null)
+			{
+				AudioSource.PlayClipAtPoint(enemyDespawnSound,other.transform.position,0.2f);
+			}
+			scoreControl.AddScore(enemyScoreValue);
+
 			TrashMan.despawn (other.gameObject);
 
-			Collider2D[] colliders = Physics2D.OverlapCircleAll(other.gameObject.transform.position, ExplosionRadius);
+			Collider2D[] colliders = Physics2D.OverlapCircleAll(other.gameObject.transform.position, enemyExplosionRadius);
 
 				foreach(var col in colliders)
 				{
