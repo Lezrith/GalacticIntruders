@@ -11,7 +11,9 @@ public class SpawnAsteroid : MonoBehaviour
     public bool asteroidBelt;
     private SpriteRenderer danger;
     public float FlashTime;
-    // Use this for initialization
+	private bool ifAsteroidBelt;
+	private float probability;
+	private float delayTime;
     void Start()
     {
         InvokeRepeating("Spawn", spawnDelay, spawnTime);
@@ -29,26 +31,36 @@ public class SpawnAsteroid : MonoBehaviour
             danger.enabled = false;
         }
     }
-    void Spawn()
-    {
-        if (!asteroidBelt)
-        if (Time.time - timeIfAsteroidBelt > 5.0f)
-        {
-            asteroidBelt = true;
-            timeOffAsteroidBelt = Time.time;
-        }
-        if(asteroidBelt)
-        {
-            Flash();
-            if (Time.time - timeOffAsteroidBelt > 5.0f)
-            {
-                asteroidBelt = false;
-                timeIfAsteroidBelt = Time.time;
-            }
-            
-                int enemyIndex = Random.Range(0, asteroids.Length);
-                TrashMan.spawn(asteroids[enemyIndex], new Vector2(Random.Range(1, 12), transform.position.y), transform.rotation);
-            
-        }
-    }
+	void Spawn() 
+	{
+		if (!asteroidBelt)
+		{
+			probability = Random.Range (0, 100);
+			if (probability > 98)
+			{
+				asteroidBelt = true;
+				timeOffAsteroidBelt = Time.time;
+			} 
+			else 
+			{
+				delayTime = Time.time;
+				if (Time.time - delayTime > 3.0f)
+					delayTime = Time.time;			
+			}
+		}
+		if(asteroidBelt)       
+		{
+			Flash();
+			if (Time.time - timeOffAsteroidBelt > 9.0f)      
+			{
+				asteroidBelt = false;
+				delayTime = Time.time;
+				if (Time.time - delayTime > 6.0f)
+					delayTime=Time.time;          
+			}
+			
+			int enemyIndex = Random.Range(0, asteroids.Length);
+			TrashMan.spawn(asteroids[enemyIndex], new Vector2(Random.Range(1, 12), transform.position.y), transform.rotation);     
+		} 
+	}
 }
