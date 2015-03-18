@@ -9,11 +9,25 @@ public class Shield : MonoBehaviour
 	private Renderer ShieldRenderer;
 	private float shieldOnTime = 0.0f;
     private int shieldCount = 1;
+    private Renderer[] ShieldCounterBar;
 
     void Start()
     {
-        //ShieldRenderer = GameObject.Find("Ship/ShieldSprite").GetComponent<Renderer>();
 		ShieldRenderer = HGetComponentGeneric.ByName<Renderer>("Ship/ShieldSprite");
+        ShieldCounterBar = new Renderer[3];
+        ShieldCounterBar[0] = HGetComponentGeneric.ByName<Renderer>("ShieldCounter/ShieldCounterBar1");
+        ShieldCounterBar[1] = HGetComponentGeneric.ByName<Renderer>("ShieldCounter/ShieldCounterBar2");
+        ShieldCounterBar[2] = HGetComponentGeneric.ByName<Renderer>("ShieldCounter/ShieldCounterBar3");
+    }
+
+    public void AddShieldCharge()
+    {
+        if (shieldCount < 3)
+        {
+            ShieldCounterBar[shieldCount].enabled = true;
+            shieldCount++;
+        }
+        
     }
 
     void Update()
@@ -23,6 +37,7 @@ public class Shield : MonoBehaviour
             shieldOnTime = Time.time;
             shieldState = true;
             shieldCount--;
+            ShieldCounterBar[shieldCount].enabled = false;
             Debug.Log("ShieldON");
             ShieldRenderer.enabled = true;
         }
