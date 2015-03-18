@@ -411,7 +411,7 @@ MonoBehaviour:
   - {fileID: 176838, guid: 958ad691ae9a88441b53ee0c7bed821b, type: 2}
   spawnTime: .400000006
   spawnDelay: .5
-  asteroidBelt: 1
+  asteroidBelt: 0
   FlashTime: .300000012
 --- !u!4 &759673970
 Transform:

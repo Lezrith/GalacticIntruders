@@ -4,7 +4,7 @@ using System.Collections;
 public class MenuOnClick : MonoBehaviour
 {
     private GameObject wyn;
-
+	private GameObject music;
     void Start()
     {
         wyn = GameObject.FindWithTag("Wynik");
@@ -12,6 +12,8 @@ public class MenuOnClick : MonoBehaviour
     public void GoToDoboa()
     {
         wyn.GetComponent<GUIText>().enabled = true;
+		music = GameObject.Find ("Music");
+		Destroy (music);
         Application.LoadLevel("Doboa");
     }
 
