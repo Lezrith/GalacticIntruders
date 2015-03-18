@@ -21,7 +21,7 @@ public class Shooting : MonoBehaviour {
 			TrashMan.spawn(Shot, new Vector2(ShotSpawn.position.x, ShotSpawn.position.y), transform.rotation);
 			TrashMan.spawn(Shot, new Vector2(ShotSpawn2.position.x, ShotSpawn2.position.y), transform.rotation);
 
-			AudioSource.PlayClipAtPoint (fireSound, this.gameObject.transform.position);
+			AudioSource.PlayClipAtPoint (fireSound, this.gameObject.transform.position,0.2f);
 		}
 	}
 }
