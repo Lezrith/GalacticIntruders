@@ -1264,6 +1264,47 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 96073604eb3698248b460f17724ed553, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1609200052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1609200053}
+  - 61: {fileID: 1609200054}
+  m_Layer: 0
+  m_Name: Anti-ShipBeingPushedBackWall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1609200053
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1609200052}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.477, y: -.0930000022, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+--- !u!61 &1609200054
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1609200052}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -.388147831, y: .0897376537}
+  serializedVersion: 2
+  m_Size: {x: .22370249, y: 5.7688098}
 --- !u!1 &1771938701
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,3 +1595,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerDeathSound: {fileID: 8300000, guid: c83c93f07b8c8da45afab0f8117fbe30, type: 3}
   shieldState: 0
+  test: 0

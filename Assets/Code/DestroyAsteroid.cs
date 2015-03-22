@@ -12,7 +12,7 @@ public class DestroyAsteroid : MonoBehaviour
 
     void Start()
     {
-        GameObject scoreControlObject = GameObject.FindWithTag("ScoreControl");
+        /*GameObject scoreControlObject = GameObject.FindWithTag("ScoreControl");
         if (scoreControlObject != null)
         {
             scoreControl = scoreControlObject.GetComponent<ScoreControl>();
@@ -30,7 +30,7 @@ public class DestroyAsteroid : MonoBehaviour
 		else 
 		{
 			Debug.Log("Cannot find Shield script");
-		}
+		}*/
     }
 
     void Update()
@@ -38,7 +38,7 @@ public class DestroyAsteroid : MonoBehaviour
         if (transform.position.x < -4.0f || transform.position.y<-3.0f) TrashMan.despawn(gameObject);
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    /*void OnTriggerEnter2D(Collider2D col)
     {
 		GameObject scoreControlObject = GameObject.FindWithTag("ScoreControl");
 		scoreControl = scoreControlObject.GetComponent<ScoreControl>();
@@ -63,5 +63,5 @@ public class DestroyAsteroid : MonoBehaviour
 			}
         }
         
-    }
+    }*/
 }
