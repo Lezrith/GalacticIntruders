@@ -7,6 +7,7 @@ public class DestroyEnemy : MonoBehaviour {
 	private ScoreControl scoreControl;
 	private GoToGameOver gameOver;
 	private AudioClip enemyDespawnSound;
+    private GameObject enemyExplosionPrefab;
 
 	private bool shieldState;
 	private int enemyScoreValue;
@@ -36,13 +37,17 @@ public class DestroyEnemy : MonoBehaviour {
 			enemyScoreValue=enemyScript.scoreValue;
 			enemyDespawnSound=enemyScript.despawnSound;
 			enemyExplosionRadius=enemyScript.explosionRadius;
+            enemyExplosionPrefab = enemyScript.explosionPrefab;
 
 			if(enemyDespawnSound!=null)
 			{
-				AudioSource.PlayClipAtPoint(enemyDespawnSound,other.transform.position,0.2f);
+                AudioSource.PlayClipAtPoint(enemyDespawnSound,other.transform.position,0.2f);
 			}
 			scoreControl.AddScore(enemyScoreValue);
 
+            TrashMan.spawn(enemyExplosionPrefab, new Vector2(other.transform.position.x, other.transform.position.y),
+            other.transform.rotation);
+            //TrashMan.despawnAfterDelay(enemyExplosionPrefab, 5.0f);
 			TrashMan.despawn (other.gameObject);
 
 			Collider2D[] colliders = Physics2D.OverlapCircleAll(other.gameObject.transform.position, enemyExplosionRadius);

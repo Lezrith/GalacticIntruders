@@ -11,6 +11,7 @@ public class DestroyPlayer : MonoBehaviour {
 	private bool shieldState;
 	private int enemyScoreValue;
 	
+    public GameObject explosionPrefab;
 	public AudioClip despawnSound;
 	public int scoreValue;
 	public float explosionRadius;

@@ -140,7 +140,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &165540603
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,6 +209,26 @@ MonoBehaviour:
     cullInterval: 10
     automaticallyRecycleParticleSystems: 0
     persistBetweenScenes: 1
+  - prefab: {fileID: 144622, guid: 1f2cfa2625d8b26429e65580fc513d3d, type: 2}
+    instancesToPreallocate: 5
+    instancesToAllocateIfEmpty: 1
+    imposeHardLimit: 0
+    hardLimit: 5
+    cullExcessPrefabs: 0
+    instancesToMaintainInPool: 5
+    cullInterval: 10
+    automaticallyRecycleParticleSystems: 0
+    persistBetweenScenes: 1
+  - prefab: {fileID: 115122, guid: 1f2cfa2625d8b26429e65580fc513d3d, type: 2}
+    instancesToPreallocate: 5
+    instancesToAllocateIfEmpty: 1
+    imposeHardLimit: 0
+    hardLimit: 5
+    cullExcessPrefabs: 0
+    instancesToMaintainInPool: 5
+    cullInterval: 10
+    automaticallyRecycleParticleSystems: 0
+    persistBetweenScenes: 1
   cullExcessObjectsInterval: 10
   persistBetweenScenes: 1
   transform: {fileID: 0}
@@ -223,7 +243,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
 --- !u!1 &280517186
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +270,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!4 &319573252
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 93f86a31dcdd7a4469cd9e79f14f6473, type: 2}
@@ -488,7 +508,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!1 &763874489
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,7 +560,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!114 &763874492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -633,7 +653,7 @@ Transform:
   m_LocalPosition: {x: .0799999982, y: -.68599999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1152337465}
+  m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!114 &840708674
 MonoBehaviour:
@@ -700,7 +720,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!114 &884749719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -761,7 +781,7 @@ Transform:
   - {fileID: 1141833969}
   - {fileID: 771747952}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
 --- !u!1 &1077154531
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,7 +878,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!1 &1080538007
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,7 +920,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!114 &1080538010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1087,9 +1107,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 319573252}
-  - {fileID: 840708673}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!1 &1412307570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1202,7 +1221,7 @@ Transform:
   m_LocalScale: {x: .400000006, y: .400000006, z: .400000006}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
 --- !u!114 &1582017015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1291,7 +1310,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
 --- !u!61 &1609200054
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1333,7 +1352,7 @@ Transform:
   - {fileID: 1574751045}
   - {fileID: 624405521}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!1001 &1947707371
 Prefab:
   m_ObjectHideFlags: 0
@@ -1446,7 +1465,7 @@ Transform:
   - {fileID: 675624288}
   - {fileID: 351042611}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!114 &2119289433
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -79,6 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3270b7f36aff6a14d8b8ca4c33d5c929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 115122, guid: 1f2cfa2625d8b26429e65580fc513d3d, type: 2}
   despawnSound: {fileID: 0}
   scoreValue: 50
   explosionRadius: .280000001
